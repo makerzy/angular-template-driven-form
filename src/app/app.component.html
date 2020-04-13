@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <h1>Enrollment Form</h1>
-
+  <div *ngIf="errorMsg" class="alert alert-warning">
+    <h3>{{ errorMsg }}</h3>
+  </div>
   <form
     #userForm="ngForm"
     *ngIf="!submitted"

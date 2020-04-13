@@ -20,6 +20,8 @@ export class AppComponent {
     true
   );
   submitted = false;
+  errorMsg = '';
+
   constructor(private enroll: EnrollService) {}
   validateTopic(value) {
     if (value == 'default') {
@@ -35,7 +37,7 @@ export class AppComponent {
       (data) => {
         console.log(data);
       },
-      (err) => console.log(err)
+      (error) => (this.errorMsg = error.statusText)
     );
   }
 }
